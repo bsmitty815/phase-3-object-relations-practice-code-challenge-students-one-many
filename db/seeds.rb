@@ -28,5 +28,16 @@ c5 = Cohort.create(
 puts "Seeding students..."
 # TODO: create seed data for students
 # check your schema and make sure to create students with all the necessary data
+10.times do
+  #creates a fake name each time with Faker name
+  name = Faker::Book.author 
+
+  age = rand(0..100)
+
+  cohort_id = Cohort.ids.sample
+
+  Student.create(name: name, age: age, cohort_id: cohort)
+end
+
 
 puts "Done!"
